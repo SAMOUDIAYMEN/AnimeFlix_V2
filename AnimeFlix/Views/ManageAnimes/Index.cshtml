@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AnimeFlix.Models.ManageAnime>
+
+@{ ViewData["Title"] = "Index"; }
+</br>
+<div class="container">
+    <h1>All Animes</h1>
+
+    @if (Model.Any())
+    {
+        <a asp-action="Create" class="btn btn-primary mb-3" style="width:auto">Add new Anime</a>
+        <a asp-controller="categoryanimes" asp-action="index" class="btn btn-primary mb-3" style="width:auto">Manage Category</a> 
+        foreach (var item in Model)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    Category Id : @Html.DisplayFor(modelItem => item.categoryid)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.titleAnime)</h5>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary mb-3" style="width:auto" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a class="btn btn-primary mb-3" style="width:auto" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a class="btn btn-primary mb-3" style="width:auto" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </div>
+            </div> 
+        }
+    }
+    else
+    {
+    <div class="card">
+        <div class="card-header">
+            No anime created yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to create an anime
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-action="Create">
+                Add new Anime
+            </a>
+        </div>
+    </div>
+    }
+</div>

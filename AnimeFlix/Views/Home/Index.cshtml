@@ -1,0 +1,197 @@
+﻿@model IEnumerable<AnimeFlix.Models.ManageAnime>
+
+@{ ViewData["Title"] = "Home Page"; }
+
+@section css{
+    <link rel="stylesheet" href="~/css/card.css" />
+}
+
+<section id="slidebar">
+    <div id="slider">
+        <div id="headerSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../images/bc.png" class="d-block img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><span id="top">Black Clover </span></h5>
+                        <p><span id="bottom">Genres : Action, Fantasy</span></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/naruto.png" class="d-block img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><span id="top">Naruto: Shippuden </span></h5>
+                        <p><span id="bottom">Genres : Action, Fantasy, Drama</span></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/hxh.png" class="d-block img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><span id="top">Hunter x Hunter </span></h5>
+                        <p><span id="bottom">Genres : Action, Adventure, Quest</span></p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#headerSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#headerSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+  </br>
+<section id="services">
+    <br>
+    <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="../images/goku.mp4" type="video/webm">Sorry, your browser does not support HTML5 video.
+    </video>
+    <div class="container">
+        <h1>Our Services</h1>
+        <br><br>
+    </div>
+    <div class="row list">
+        <div class="col-sm text-center">
+            <div class="icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <h3>1080P Quality</h3>
+            <p>Enjoy your favorite anime</p>
+            <p>in the best quality!</p>
+        </div>
+        <div class="col-sm text-center">
+            <div class="icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Unlimited Watchtime</h3>
+            <p>Watch as many shows as your</p>
+            <p>heart desires for free!</p>
+        </div>
+        <div class="col-sm text-center">
+            <div class="icon">
+                <i class="fas fa-phone-volume"></i>
+            </div>
+            <h3>24/7 Online Support</h3>
+            <p>Refer to our contact page incase</p>
+            <p>you face any problems or bugs!</p>
+        </div>
+    </div>
+    <br><br><br><br>
+</section>
+    </br>
+<section id="anime">
+    <div class="container">
+        <h1>Latest Anime</h1>
+        </br></br>
+        <div class="row justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="card movie_card">
+                    <img src="@Html.DisplayFor(modelItem => item.imgAnime)" class="card-img-top" alt="img" />
+                    <div class="card-body">
+                        <a href="@Html.DisplayFor(modelItem => item.trailerAnime)" target="_blank">
+                            <i class="fas fa-camera play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                            </i>
+                        </a>
+                        <a asp-controller="Animes" asp-action="Details" asp-route-id="@item.id">
+                            <i class="fas fa-play play_button" id="play-movie" data-toggle="tooltip" data-placement="bottom" title="Play Movie">
+                            </i>
+                        </a>
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.titleAnime)</h5>
+                        <span class="movie_info">@Html.DisplayFor(modelItem => item.studion)</span>
+                        <span class="movie_info float-right">
+                            @Html.DisplayFor(modelItem => item.ratingAnime) <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+    <br>
+    <a asp-controller="Animes" asp-action="index"><h4> <i class="fas fa-arrow-right"></i> Check out all anime </h4></a>
+</section>
+  </br>
+
+<section id="team">
+    <div class="container">
+        <br>
+        <h1>Our Team</h1>
+        <div class="row">
+            <div class="col-sm profile-pic text-center">
+                <div class="img-box">
+                    <img src="../images/team/reda.png" class="img-responsive">
+                    <ul>
+                        <a href="https://www.facebook.com/reda.wow/"><li><i class="fa fa-facebook"></i></li></a>
+                        <a href="https://www.instagram.com/reda_goumri/"><li><i class="fa fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Elgoumri Reda</h2>
+                <h3>Designer</h3>
+                <p>Contanct me if you face any problems!</p>
+            </div>
+            <div class="col-sm profile-pic text-center">
+                <div class="img-box">
+                    <img src="../images/team/samoudi.png" class="img-responsive">
+                    <ul>
+                        <a href="https://www.facebook.com/samoudi.aymen"><li><i class="fa fa-facebook"></i></li></a>
+                        <a href="https://www.instagram.com/samoudi.aymen/"><li><i class="fa fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Aymen Samoudi</h2>
+                <h3>Developer</h3>
+                <p>Contanct me if you face any problems!</p>
+            </div>
+        </div>
+    </div>
+</section>
+  </br>
+<section id="contact">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="contact-form" method="post" autocomplete="off" name="google-sheet">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" name="Name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Phone Number" name="Phone" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Adress" name="Email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Message" name="Message" required></textarea>
+                    </div>
+                    <br>
+                    <button type="submit" name="submit" class="btn btn-dark">Send Report</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwFvKUTbKVRB0jXT0B95IiLTdLvsoWN-MwpeLSS46vF3CYZh7uk/exec'
+    const form = document.forms['google-sheet']
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

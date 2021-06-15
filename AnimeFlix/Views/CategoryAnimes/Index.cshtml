@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AnimeFlix.Models.CategoryAnime>
+
+@{
+    ViewData["Title"] = "Index";
+}
+</br>
+<div class="container">
+    <h1>All Categories</h1>
+
+    @if (Model.Any())
+    {
+        <a class="btn btn-primary mb-3" style="width:auto" asp-action="Create">Add new Category</a>
+
+        foreach (var item in Model)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    Category Name :  @Html.DisplayFor(modelItem => item.id)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> @Html.DisplayFor(modelItem => item.CategoryName)</h5>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary mb-3" style="width:auto" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a class="btn btn-primary mb-3" style="width:auto" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                No Category created yet
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Use the button below to create a category
+                </h5>
+                <a class="btn btn-primary" style="width:auto"
+                   asp-action="Create">
+                    Create Category
+                </a>
+            </div>
+        </div>
+    }
+</div>

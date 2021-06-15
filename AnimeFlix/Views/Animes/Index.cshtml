@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AnimeFlix.Models.ManageAnime>
+
+@{ ViewData["Title"] = "Index"; }
+</br>
+<section id="anime">
+    <div class="container">
+        <br>
+        <h1>All Available Anime</h1>
+        </br></br>
+        <div class="row justify-content-center">
+            @foreach (var item in Model)
+            {
+<div class="card movie_card">
+    <img src="@Html.DisplayFor(modelItem => item.imgAnime)" class="card-img-top" alt="img" />
+    <div class="card-body">
+        <a href="@Html.DisplayFor(modelItem => item.trailerAnime)" target="_blank">
+            <i class="fas fa-camera play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+            </i>
+        </a>
+        <a asp-controller="Animes" asp-action="Details" asp-route-id="@item.id">
+            <i class="fas fa-play play_button" id="play-movie" data-toggle="tooltip" data-placement="bottom" title="Play Movie">
+            </i>
+        </a>
+        <h5 class="card-title">@Html.DisplayFor(modelItem => item.titleAnime)</h5>
+        <span class="movie_info">@Html.DisplayFor(modelItem => item.studion)</span>
+        <span class="movie_info float-right">
+            @Html.DisplayFor(modelItem => item.ratingAnime) <i class="fas fa-star"></i>
+        </span>
+    </div>
+</div>            }
+        </div>
+    </div>
+</section>
+@section css{
+    <link rel="stylesheet" href="~/css/card.css" />
+}

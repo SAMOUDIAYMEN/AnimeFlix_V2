@@ -1,0 +1,417 @@
+﻿.bc-page {
+    /*background: black;*/
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand {
+    height: 100px;
+    padding-left: 30px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+    .navbar-nav li a {
+        float: right;
+        text-align: left;
+    }
+
+#nav ul li a:hover {
+    color: red !important;
+}
+
+.navbar {
+    background: #fff;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.navbar-brand img {
+    height: 97px;
+}
+
+
+
+
+/* slider */
+
+
+
+
+#slider {
+    width: 100%;
+}
+
+
+
+.carousel-caption h5 {
+    color: #fff;
+    text-shadow: 4px 4px #777;
+    font-size: 42px;
+}
+
+.carousel-caption #bottom {
+    color: white;
+    background-color: rgba(0, 0, 1, .4);
+    font-size: 21px;
+}
+
+
+
+/* services */
+
+
+
+#services h1 {
+    text-align: center;
+    color: #efefef !important;
+    padding-bottom: 10px;
+}
+
+    #services h1::after {
+        content: '';
+        background: #efefef;
+        display: block;
+        height: 3px;
+        width: 170px;
+        margin: 20px auto 5px;
+    }
+
+#services {
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.services {
+    margin-top: 40px;
+}
+
+.icon {
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+#videobcg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: -100;
+}
+
+
+
+#services p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+#services .col-sm:hover {
+    background-image: linear-gradient(rgba(46, 46, 46, 0.193),rgba(116, 115, 115, 0.59));
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+
+
+
+#anime .img-box img {
+    height: 250px;
+    width: 350px;
+}
+
+#services .profile-pic {
+    margin-top: 25px;
+    position: static;
+    align-items: center;
+}
+
+    #services .profile-pic .img-box {
+        opacity: 1;
+        display: block;
+        position: relative;
+    }
+
+        #services .profile-pic .img-box img {
+            border: 2px solid black;
+        }
+
+            #services .profile-pic .img-box img:hover {
+                cursor: pointer;
+            }
+
+    #services .profile-pic a h4 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: white;
+        vertical-align: middle;
+    }
+
+        #services .profile-pic a h4:hover {
+            background: linear-gradient(rgba(46, 46, 46, 0.193),rgba(116, 115, 115, 0.59));
+        }
+
+    #services .profile-pic a {
+        text-decoration: none;
+    }
+
+    #services .profile-pic p {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+#anime {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../images/bg.png') !important;
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+    #anime h1 {
+        text-align: center;
+        color: #efefef !important;
+        padding-bottom: 10px;
+    }
+
+    #anime a {
+        text-decoration: none;
+    }
+
+    #anime .profile-pic a h4 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: white;
+        vertical-align: middle;
+    }
+
+        #anime .profile-pic a h4:hover {
+            background-image: linear-gradient(rgba(46, 46, 46, 0.193),rgba(116, 115, 115, 0.59));
+        }
+
+    #anime h1::after {
+        content: '';
+        background: #efefef;
+        display: block;
+        height: 3px;
+        width: 170px;
+        margin: 20px auto 5px;
+    }
+
+
+
+#team .profile-pic {
+    margin-top: 25px;
+}
+
+    #team .profile-pic .img-box {
+        opacity: 1;
+        display: block;
+        position: relative;
+    }
+
+        #team .profile-pic .img-box img {
+            filter: blur(1.5rem);
+            height: 300px;
+        }
+
+            #team .profile-pic .img-box img:hover {
+                filter: blur();
+                cursor: pointer;
+                transition: .5s;
+            }
+
+    #team .profile-pic h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: black !important;
+    }
+
+    #team .profile-pic h3 {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+#team .fa {
+    height: 25px;
+    width: 25px;
+    color: black !important;
+    background: #777;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+#team .img-box ul {
+    padding: 15px 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+    #team .img-box ul li {
+        padding: 5px;
+        display: inline-block;
+    }
+
+#team .img-box:hover ul {
+    opacity: 1;
+}
+
+#team {
+    background-color: white;
+}
+
+    #team .img-box ul, #team .img-box ul li {
+        transition: .5s;
+    }
+
+    #team h1 {
+        text-align: center;
+        color: black !important;
+        padding-bottom: 10px;
+    }
+
+        #team h1::after {
+            content: '';
+            background: black !important;
+            display: block;
+            height: 3px;
+            width: 170px;
+            margin: 20px auto 5px;
+        }
+
+
+#contact {
+    background: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+}
+
+    #contact .contact-form {
+        padding: 15px;
+    }
+
+    #contact .form-control {
+        border-radius: 0 !important;
+        border: none !important;
+    }
+
+    #contact ::placeholder {
+        color: #999 !important;
+    }
+
+    #contact h1 {
+        text-align: center;
+        color: black !important;
+        padding-bottom: 10px;
+    }
+
+        #contact h1::after {
+            content: '';
+            background: black !important;
+            display: block;
+            height: 3px;
+            width: 170px;
+            margin: 20px auto 5px;
+        }
+
+.footer {
+    background: gray;
+}
+
+
+
+.bg-white #button-addon1 {
+    color: #ffc371;
+}
+
+i {
+    color: #ffc371;
+}
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.form-control.shadow-0:focus {
+    box-shadow: none;
+}
+
+
+#services .fas {
+    color: white !important;
+}
+
+
+#anime-body {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../images/bg.png');
+    ;
+    background-size: cover;
+}
+
+#anime a {
+    text-decoration: none;
+}
+
+#anime a h4 {
+    color: white;
+}
+
+#anime a h4 .fas {
+    color: white;
+}

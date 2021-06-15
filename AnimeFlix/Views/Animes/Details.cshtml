@@ -1,0 +1,14 @@
+﻿@model AnimeFlix.Models.ManageAnime
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section id="anime">
+    <div class="container">
+        <h1>Watch @Html.DisplayFor(model => model.titleAnime)</h1>
+        </br>
+        <div style="width: 100%; text-align: center;">@Html.Raw(Model.src)</div>
+        </br>
+    </div>
+</section>
